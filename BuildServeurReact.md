@@ -129,20 +129,22 @@ les composent serve a integrer des element qui se répete regulierement
 crée Header.jsx dans componment editer sont contenu :
 ```javascript
 // importer la fonction link
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <nav>
-        <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/about">About</Link>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <NavLink to="/">Home</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/about">About</NavLink>
+                </li>
+            </ul>
+        </nav>
+    </header>
   );
 }
 export default Header;
@@ -318,6 +320,54 @@ function About(){
 ```
 ____
 ### Utiliser une image dans React
+importer avec `import logo from "../assets/img/image.png"`
+et uriliser avec : `<img src={logo} alt="Logo" />`
+___
+### Les Hooks
 
+les Hooks serv a ajouter des fonctionnalités simplement
+useEffect pour appeler l'API ou pour gérer des évenement 
+```javascript
+import { useState, useEffect } from 'react';
 
+function DataComponent() {
+  const [data, setData] = useState(null);
 
+  useEffect(() => {
+    fetchData();
+    // Ajouter des fonctionnalités simplement
+  }, []);
+
+  const fetchData = async () => {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    setData(data);
+    // useEffect pour appeler une API ou gérer des évènements
+  };
+
+  return (
+    <div>
+      {data ? (
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading data...</p>
+      )}
+    </div>
+  );
+}
+```
+Ce code décrit un composant React qui effectue une requête HTTP GET pour obtenir des données à partir de l'API de l'exemple `https://api.example.com/data`.
+
+Le composant `DataComponent` définit d'abord un état de données à l'aide de l'hameçon `useState`, qui est initialement défini sur `null`.
+
+L'hameçon `useEffect` est ensuite utilisé pour appeler la fonction `fetchData` une seule fois après que le composant a été monté dans l'arbre de rendu.
+
+La fonction `fetchData` effectue la requête HTTP GET à l'API à l'aide de l'API de pêche intégrée de JavaScript et définit l'état de données pour l'élément retourné en utilisant `setData`.
+
+Enfin, le composant retourne un élément DOM `<div>` qui affiche soit une liste d'éléments `<li>` si les données sont chargées, soit un texte de chargement de données si les données ne sont pas encore chargées.
+
+___
