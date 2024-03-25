@@ -49,7 +49,7 @@ ___
 
 - Créez un nouveau fichier App.jsx et ajoutez l'instruction 
 import pour react-router-dom
-    - `npm i react-router-dom`
+    - `import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';`
 
 - Ajoutez le code gérant les routes dans le fichier App.jsx.
 
