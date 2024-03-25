@@ -35,7 +35,7 @@ function Meteo(){
 
                     <div className="meteo-temp">
                         <p>Temp : {datas[0].current_condition.condition}</p>
-                        <img src={datas[0].current_condition.icon_big} alt="icon"/>
+                        <img className="img-meteo" src={datas[0].current_condition.icon_big} alt="icon"/>
                     </div> 
                 </>
             ):(
