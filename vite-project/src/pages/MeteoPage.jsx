@@ -1,9 +1,11 @@
 import Meteo from "../components/Meteo"
+import Header from "../components/Header/";
 
 function MeteoPage(){
     return(
         <>
-        <h1>Page météo</h1>
+        <Header/>
+        {/* <h1>Page météo</h1> */}
             <Meteo/>
         </>
     )
