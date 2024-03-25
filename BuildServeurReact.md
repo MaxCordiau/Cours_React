@@ -12,7 +12,7 @@ ___
 
 - Sélectionnez `JavaScript` lorsqu'on vous le demande.
 
-- Exécutez cd myapp pour changer le répertoire vers le dossier du projet.
+- Exécutez `cd myapp` pour changer le répertoire vers le dossier du projet.
 
 - Exécutez `npm i` pour installer les dépendances du projet.
 
