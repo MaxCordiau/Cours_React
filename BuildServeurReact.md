@@ -121,6 +121,10 @@ et ajouter dans App.jsx:
 // ...autre import
 import About from './pages/about';
 
+//et crée la root
+<Route path="/about" element={<About />} />
+
+
 ```
 ___
 ### Crée un Composent header.jsx
